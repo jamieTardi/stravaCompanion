@@ -1,17 +1,22 @@
 import React from 'react';
 
-const PaginationActivity = ({ activitiesPerPage, totalPosts }) => {
+const PaginationActivity = ({ activitiesPerPage, totalPosts, paginate }) => {
 	const pageNumbers = [];
 
 	for (let i = 0; i <= Math.ceil(totalPosts / activitiesPerPage); i++) {
-		pageNumbers.push[i];
+		pageNumbers.push([i]);
 	}
 	return (
 		<div>
 			<ul className='pagination'>
 				{pageNumbers.map((page) => (
 					<li key={page} className='page-item'>
-						<a href='!#' className='page-link'>
+						<a
+							onClick={() => {
+								paginate(page);
+							}}
+							href='!#'
+							className='page-link'>
 							{page}
 						</a>
 					</li>

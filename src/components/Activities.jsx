@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Table } from 'react-bootstrap';
-import { PaginationActivity } from './PaginationActivity';
+import { PaginationActivity } from './index';
 const Activities = ({ activities, setActivities }) => {
 	const [activitiesPerPage, setActivitiesPerPage] = useState(5);
 	const [currentPage, setCurrentPage] = useState(1);
@@ -39,6 +39,10 @@ const Activities = ({ activities, setActivities }) => {
 			.catch((e) => console.log(e));
 	}
 
+	const paginate = (page) => {
+		return setCurrentPage(page);
+	};
+
 	return (
 		<div>
 			<Table striped bordered hover variant='dark'>
@@ -62,6 +66,11 @@ const Activities = ({ activities, setActivities }) => {
 						<p>loading</p>
 					)}
 				</tbody>
+				<PaginationActivity
+					totalPosts={totalPosts}
+					activitiesPerPage={activitiesPerPage}
+					paginate={paginate}
+				/>
 			</Table>
 		</div>
 	);
