@@ -1,9 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Table } from 'react-bootstrap';
-
+import { PaginationActivity } from './PaginationActivity';
 const Activities = ({ activities, setActivities }) => {
-	const [isLoading, setIsLoading] = useState(true);
+	const [activitiesPerPage, setActivitiesPerPage] = useState(5);
+	const [currentPage, setCurrentPage] = useState(1);
+	let totalPosts = activities ? activities.length : false;
 
+	const indexOfLastPost = activitiesPerPage * currentPage;
+	const indexOfFirstPost = indexOfLastPost - activitiesPerPage;
+	const currentPosts = activities
+		? activities.slice(indexOfFirstPost, indexOfLastPost)
+		: false;
 	//Strava Credentials
 	let clientID = process.env.REACT_APP_CLIENT_ID;
 	let clientSecret = process.env.REACT_APP_SECRET;
@@ -28,10 +35,7 @@ const Activities = ({ activities, setActivities }) => {
 	function getActivities(access) {
 		fetch(callActivities + access)
 			.then((res) => res.json())
-			.then(
-				(data) => setActivities(data),
-				setIsLoading((prev) => !prev),
-			)
+			.then((data) => setActivities(data))
 			.catch((e) => console.log(e));
 	}
 
@@ -48,7 +52,7 @@ const Activities = ({ activities, setActivities }) => {
 				</thead>
 				<tbody>
 					{activities ? (
-						activities.map((activity, i) => (
+						currentPosts.map((activity, i) => (
 							<tr>
 								<td>{++i}</td>
 								<td>{activity.name}</td>
@@ -57,18 +61,6 @@ const Activities = ({ activities, setActivities }) => {
 					) : (
 						<p>loading</p>
 					)}
-
-					<tr>
-						<td>2</td>
-						<td>Jacob</td>
-						<td>Thornton</td>
-						<td>@fat</td>
-					</tr>
-					<tr>
-						<td>3</td>
-						<td colSpan='2'>Larry the Bird</td>
-						<td>@twitter</td>
-					</tr>
 				</tbody>
 			</Table>
 		</div>
