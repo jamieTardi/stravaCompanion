@@ -6,7 +6,7 @@ function App() {
 	const [activities, setActivities] = useState(null);
 	const [darkmode, setDarkmode] = useState(true);
 	return (
-		<div className='App container'>
+		<div className='App '>
 			<Activities activities={activities} setActivities={setActivities} />
 		</div>
 	);

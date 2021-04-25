@@ -1,8 +1,14 @@
-.root {
-  background: #1d1d28;
+html {
+  background: #292929;
+  min-height: 100vh;
+  width: 100vw;
 }
 
 p {
   color: #fff;
+}
+
+.table-container {
+  background: #292929;
 }
 /*# sourceMappingURL=styles.css.map */

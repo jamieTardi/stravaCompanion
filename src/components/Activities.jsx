@@ -4,6 +4,9 @@ import { PaginationActivity } from './index';
 const Activities = ({ activities, setActivities }) => {
 	const [activitiesPerPage, setActivitiesPerPage] = useState(5);
 	const [currentPage, setCurrentPage] = useState(1);
+
+	console.log(activities);
+
 	let totalPosts = activities ? activities.length : false;
 
 	const indexOfLastPost = activitiesPerPage * currentPage;
@@ -44,14 +47,16 @@ const Activities = ({ activities, setActivities }) => {
 	};
 
 	return (
-		<div>
+		<div className='d-flex justify-content-center flex-column align-items-center table-container'>
 			<Table striped bordered hover variant='dark'>
 				<thead>
 					<tr>
 						<th>#</th>
 						<th>Activity</th>
-						<th>Last Name</th>
-						<th>Username</th>
+						<th>Distance</th>
+						<th>Average Speed</th>
+						<th>Average Heart Rate</th>
+						<th>Average Run Cadence</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -60,18 +65,25 @@ const Activities = ({ activities, setActivities }) => {
 							<tr>
 								<td>{++i}</td>
 								<td>{activity.name}</td>
+								<td>{Math.round(activity.distance / 1000)}</td>
+								<td>
+									{Math.round(activity.average_speed * 2.236936).toFixed(1) +
+										' mph'}
+								</td>
+								<td>{activity.average_heartrate}</td>
+								<td>{Math.round(activity.average_cadence * 2)}</td>
 							</tr>
 						))
 					) : (
 						<p>loading</p>
 					)}
 				</tbody>
-				<PaginationActivity
-					totalPosts={totalPosts}
-					activitiesPerPage={activitiesPerPage}
-					paginate={paginate}
-				/>
 			</Table>
+			<PaginationActivity
+				totalPosts={totalPosts}
+				activitiesPerPage={activitiesPerPage}
+				paginate={paginate}
+			/>
 		</div>
 	);
 };
