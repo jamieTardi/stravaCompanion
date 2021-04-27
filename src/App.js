@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Activities } from './components/index';
+import { Activities, Dashboard } from './components/index';
 import './styles/styles.css';
 
 function App() {
@@ -7,6 +7,7 @@ function App() {
 	const [darkmode, setDarkmode] = useState(true);
 	return (
 		<div className='App '>
+			<Dashboard activities={activities} />
 			<Activities activities={activities} setActivities={setActivities} />
 		</div>
 	);

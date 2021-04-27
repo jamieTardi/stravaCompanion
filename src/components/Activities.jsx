@@ -62,7 +62,7 @@ const Activities = ({ activities, setActivities }) => {
 				<tbody>
 					{activities ? (
 						currentPosts.map((activity, i) => (
-							<tr>
+							<tr key={i}>
 								<td>{++i}</td>
 								<td>{activity.name}</td>
 								<td>{Math.round(activity.distance / 1000)}</td>
