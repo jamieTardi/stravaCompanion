@@ -65,7 +65,7 @@ const Activities = ({ activities, setActivities }) => {
 							<tr key={i}>
 								<td>{++i}</td>
 								<td>{activity.name}</td>
-								<td>{Math.round(activity.distance / 1000)}</td>
+								<td>{Math.round(activity.distance / 1000 / 1.6)} Miles</td>
 								<td>
 									{Math.round(activity.average_speed * 2.236936).toFixed(1) +
 										' mph'}
