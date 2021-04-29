@@ -7,7 +7,7 @@ const Dashboard = ({ activities }) => {
 	let sevenDayTotal = 0 * 0.00062137;
 
 	try {
-		for (let i = 0; i < 7; i++) {
+		for (let i = 1; i < 7; i++) {
 			sevenDayTotal += activities[i].distance;
 		}
 	} catch (e) {
