@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card } from 'react-bootstrap';
+import { Card, Spinner } from 'react-bootstrap';
 import { Line } from 'react-chartjs-2';
 
 const TotalRunGraph = ({ activities }) => {
@@ -30,7 +30,15 @@ const TotalRunGraph = ({ activities }) => {
 		],
 	};
 
-	return <div>{activities ? <Line data={data} /> : '...Loading'}</div>;
+	return (
+		<div>
+			{activities ? (
+				<Line data={data} />
+			) : (
+				<Spinner animation='grow' variant='success' />
+			)}
+		</div>
+	);
 };
 
 export default TotalRunGraph;
