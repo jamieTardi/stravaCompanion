@@ -47,7 +47,7 @@ const Activities = ({ activities, setActivities }) => {
 	};
 
 	return (
-		<div className='d-flex justify-content-center flex-column align-items-center table-container'>
+		<div className='d-flex justify-content-center flex-column align-items-center table-container container'>
 			<Table striped bordered hover variant='dark'>
 				<thead>
 					<tr>
