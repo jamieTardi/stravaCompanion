@@ -3,11 +3,12 @@ import mapboxgl from 'mapbox-gl/dist/mapbox-gl-csp';
 // eslint-disable-next-line import/no-webpack-loader-syntax
 import MapboxWorker from 'worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker';
 
-const Map = () => {
+const Map = ({ activities }) => {
 	const mapContainer = useRef();
-	const [lng, setLng] = useState(-70.9);
-	const [lat, setLat] = useState(42.35);
-	const [zoom, setZoom] = useState(9);
+	const [lng, setLng] = useState(-1.295513);
+	const [lat, setLat] = useState(51.40869);
+	const [zoom, setZoom] = useState(18);
+	const [start, setStart] = useState(null);
 
 	mapboxgl.workerClass = MapboxWorker;
 	mapboxgl.accessToken =
@@ -20,13 +21,27 @@ const Map = () => {
 			center: [lng, lat],
 			zoom: zoom,
 		});
+
+		map.on('move', () => {
+			setLng(map.getCenter().lng.toFixed(4));
+			setLat(map.getCenter().lat.toFixed(4));
+			setZoom(map.getZoom().toFixed(2));
+		});
+
 		return () => map.remove();
 	}, []);
 
 	return (
-		<div>
-			<div className='map-container' ref={mapContainer} />
-		</div>
+		<>
+			<div>
+				<div className='sidebar'>
+					Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
+				</div>
+				<div className='map-container'>
+					<div className='map' ref={mapContainer} />
+				</div>
+			</div>
+		</>
 	);
 };
 

@@ -9,7 +9,7 @@ function App() {
 		<div className='App container col'>
 			<TotalRunGraph activities={activities} />
 			<Dashboard activities={activities} />
-			<Map />
+			<Map activities={activities} />
 			<Activities activities={activities} setActivities={setActivities} />
 		</div>
 	);
