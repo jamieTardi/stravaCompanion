@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Activities, Dashboard, TotalRunGraph } from './components/index';
+import { Activities, Dashboard, TotalRunGraph, Map } from './components/index';
 import './styles/styles.css';
 
 function App() {
@@ -9,6 +9,7 @@ function App() {
 		<div className='App container col'>
 			<TotalRunGraph activities={activities} />
 			<Dashboard activities={activities} />
+			<Map />
 			<Activities activities={activities} setActivities={setActivities} />
 		</div>
 	);
