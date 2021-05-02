@@ -3,6 +3,7 @@ import { Card } from 'react-bootstrap';
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl-csp';
 // eslint-disable-next-line import/no-webpack-loader-syntax
 import MapboxWorker from 'worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker';
+import polyline from '@mapbox/polyline';
 
 const Map = ({ activities }) => {
 	const mapContainer = useRef();
@@ -10,6 +11,11 @@ const Map = ({ activities }) => {
 	const [lat, setLat] = useState(51.40869);
 	const [zoom, setZoom] = useState(14);
 	const [start, setStart] = useState(null);
+
+	let recentRun = activities
+		? polyline.decode(activities[0].map.summary_polyline)
+		: '';
+	console.log(recentRun);
 
 	mapboxgl.workerClass = MapboxWorker;
 	mapboxgl.accessToken =
