@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
+import { Card } from 'react-bootstrap';
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl-csp';
 // eslint-disable-next-line import/no-webpack-loader-syntax
 import MapboxWorker from 'worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker';
@@ -7,7 +8,7 @@ const Map = ({ activities }) => {
 	const mapContainer = useRef();
 	const [lng, setLng] = useState(-1.295513);
 	const [lat, setLat] = useState(51.40869);
-	const [zoom, setZoom] = useState(18);
+	const [zoom, setZoom] = useState(14);
 	const [start, setStart] = useState(null);
 
 	mapboxgl.workerClass = MapboxWorker;
@@ -29,16 +30,18 @@ const Map = ({ activities }) => {
 		});
 
 		return () => map.remove();
-	}, []);
+	});
 
 	return (
 		<>
 			<div>
-				<div className='sidebar'>
-					Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
-				</div>
-				<div className='map-container'>
-					<div className='map' ref={mapContainer} />
+				<div className='map-container container rounded'>
+					<div className='map rounded' ref={mapContainer} />
+					<div className='sidebar'>
+						Longitude: {lng} | Latitude: {lat} | Zoom:{' '}
+						<span onClick={() => setZoom(zoom + 1)}>⬆️</span> {zoom}{' '}
+						<span onClick={() => setZoom(zoom - 1)}>⬇️</span>
+					</div>
 				</div>
 			</div>
 		</>

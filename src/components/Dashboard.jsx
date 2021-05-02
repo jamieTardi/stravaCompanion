@@ -16,7 +16,7 @@ const Dashboard = ({ activities }) => {
 	let weeklyAverage = ((sevenDayTotal / 5) * 0.00062137).toFixed(2);
 
 	return (
-		<div className='d-flex'>
+		<div className='d-flex container'>
 			<Card>
 				<Card.Header>Total distance previous 7 days</Card.Header>
 				<Card.Body>

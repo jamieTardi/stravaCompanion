@@ -6,7 +6,7 @@ const TotalRunGraph = ({ activities }) => {
 	// const [runDistance, setRunDistance] = useState([]);
 	let runDistance = [];
 	let totalRuns = [];
-	
+
 	try {
 		activities.map((run) => {
 			runDistance.push((run.distance * 0.000621371192).toFixed(2));
@@ -31,7 +31,7 @@ const TotalRunGraph = ({ activities }) => {
 	};
 
 	return (
-		<div>
+		<div className='container'>
 			{activities ? (
 				<Line data={data} />
 			) : (
