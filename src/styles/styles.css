@@ -11,4 +11,12 @@ p {
 .table-container {
   background: #292929;
 }
+
+.map-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
 /*# sourceMappingURL=styles.css.map */
