@@ -5,19 +5,24 @@ import map from '../assets/icons/map.svg';
 
 const Dashboard = ({ activities }) => {
 	let sevenDayTotal = 0 * 0.00062137;
+	let totalKudos = 0;
 
 	try {
 		for (let i = 1; i < 7; i++) {
 			sevenDayTotal += activities[i].distance;
 		}
+		activities.forEach((run) => {
+			totalKudos += run.kudos_count;
+		});
 	} catch (e) {
 		console.log(e);
 	}
 	let weeklyAverage = ((sevenDayTotal / 5) * 0.00062137).toFixed(2);
+	console.log(activities);
 
 	return (
-		<div className='d-flex container'>
-			<Card>
+		<div className='d-flex container my-4'>
+			<Card className='col mx-2'>
 				<Card.Header>Total distance previous 7 days</Card.Header>
 				<Card.Body>
 					<Card.Title>
@@ -30,7 +35,7 @@ const Dashboard = ({ activities }) => {
 				</Card.Body>
 			</Card>
 
-			<Card>
+			<Card className='col mx-2'>
 				<Card.Header>Average daily distance past 7 days</Card.Header>
 				<Card.Body>
 					<Card.Title>
@@ -39,6 +44,18 @@ const Dashboard = ({ activities }) => {
 					<Card.Text className='text-black-50'>
 						Average daily run distance over the past 7 days {weeklyAverage}{' '}
 						miles
+					</Card.Text>
+				</Card.Body>
+			</Card>
+
+			<Card className='col mx-2'>
+				<Card.Header>Total amount of kudos past 30 activities</Card.Header>
+				<Card.Body>
+					<Card.Title>
+						Total Kudos <img src={map} />
+					</Card.Title>
+					<Card.Text className='text-black-50'>
+						Total Kudos over the past 30 activities is {totalKudos}
 					</Card.Text>
 				</Card.Body>
 			</Card>
