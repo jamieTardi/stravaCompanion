@@ -22,39 +22,39 @@ const Dashboard = ({ activities }) => {
 
 	return (
 		<div className='d-flex container my-4'>
-			<Card className='col mx-2'>
+			<Card className='col mx-2 bg-dark text-white'>
 				<Card.Header>Total distance previous 7 days</Card.Header>
 				<Card.Body>
 					<Card.Title>
 						Distance <img src={clock} />
 					</Card.Title>
-					<Card.Text className='text-black-50'>
+					<Card.Text className='text-white-50'>
 						Total Distance covered in the last 7 days{' '}
 						{(sevenDayTotal * 0.00062137).toFixed(2)} miles run.
 					</Card.Text>
 				</Card.Body>
 			</Card>
 
-			<Card className='col mx-2'>
+			<Card className='col mx-2 bg-dark text-white'>
 				<Card.Header>Average daily distance past 7 days</Card.Header>
 				<Card.Body>
 					<Card.Title>
 						Average Daily Distance <img src={map} />
 					</Card.Title>
-					<Card.Text className='text-black-50'>
+					<Card.Text className='text-white-50'>
 						Average daily run distance over the past 7 days {weeklyAverage}{' '}
 						miles
 					</Card.Text>
 				</Card.Body>
 			</Card>
 
-			<Card className='col mx-2'>
+			<Card className='col mx-2 bg-dark text-white'>
 				<Card.Header>Total amount of kudos past 30 activities</Card.Header>
 				<Card.Body>
 					<Card.Title>
 						Total Kudos <img src={map} />
 					</Card.Title>
-					<Card.Text className='text-black-50'>
+					<Card.Text className='text-white-50'>
 						Total Kudos over the past 30 activities is {totalKudos}
 					</Card.Text>
 				</Card.Body>

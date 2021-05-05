@@ -66,22 +66,22 @@ const TotalRunGraph = ({ activities }) => {
 	};
 
 	return (
-		<div className='container '>
+		<div className='container my-4 graph-container'>
 			{activities ? (
 				<div className='d-flex'>
-					<Card className='col-6'>
+					<Card className='col bg-dark text-white mr-2'>
 						<Card.Header>
 							<Line data={data} className='graph-height' />
 						</Card.Header>
 						<Card.Body>Runs for the past 30 activities.</Card.Body>
 					</Card>
-					<Card className='col-6'>
+					<Card className='col bg-dark text-white ml-2'>
 						<Card.Header>
 							<Doughnut data={dataComp} className='graph-height' />
 						</Card.Header>
 						<Card.Body>
-							Total distance tlast 7 runs compared to the distance the previous
-							7 runs.
+							Total distance last 7 runs compared to the distance the previous 7
+							runs.
 						</Card.Body>
 					</Card>
 				</div>
