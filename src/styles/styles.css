@@ -46,4 +46,16 @@ p {
 .graph-height {
   max-height: 200px;
 }
+
+@media (max-width: 650px) {
+  .graph-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .card-margins {
+    margin: 0px !important;
+  }
+}
 /*# sourceMappingURL=styles.css.map */

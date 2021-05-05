@@ -66,9 +66,9 @@ const TotalRunGraph = ({ activities }) => {
 	};
 
 	return (
-		<div className='container my-4 graph-container'>
+		<div className='container my-4'>
 			{activities ? (
-				<div className='d-flex'>
+				<div className='d-flex graph-container'>
 					<Card className='col bg-dark text-white mr-2'>
 						<Card.Header>
 							<Line data={data} className='graph-height' />

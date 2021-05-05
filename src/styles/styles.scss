@@ -48,3 +48,13 @@ p {
 .graph-height {
 	max-height: 200px;
 }
+
+// media queries
+@media (max-width: 650px) {
+	.graph-container {
+		flex-direction: column;
+	}
+	.card-margins {
+		margin: 0px !important;
+	}
+}
