@@ -69,13 +69,13 @@ const TotalRunGraph = ({ activities }) => {
 		<div className='container my-4'>
 			{activities ? (
 				<div className='d-flex graph-container'>
-					<Card className='col bg-dark text-white mr-2'>
+					<Card className='col bg-dark text-white mr-2 card-margins'>
 						<Card.Header>
 							<Line data={data} className='graph-height' />
 						</Card.Header>
 						<Card.Body>Runs for the past 30 activities.</Card.Body>
 					</Card>
-					<Card className='col bg-dark text-white ml-2'>
+					<Card className='col bg-dark text-white card-margins'>
 						<Card.Header>
 							<Doughnut data={dataComp} className='graph-height' />
 						</Card.Header>

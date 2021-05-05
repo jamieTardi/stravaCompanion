@@ -55,6 +55,11 @@ p {
 		flex-direction: column;
 	}
 	.card-margins {
-		margin: 0px !important;
+		margin: 0.5rem 0px 0px 0px !important;
+	}
+
+	.three-card-set {
+		flex-direction: column;
+		margin-left: none !important;
 	}
 }

@@ -55,7 +55,14 @@ p {
             flex-direction: column;
   }
   .card-margins {
-    margin: 0px !important;
+    margin: 0.5rem 0px 0px 0px !important;
+  }
+  .three-card-set {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-left: none !important;
   }
 }
 /*# sourceMappingURL=styles.css.map */

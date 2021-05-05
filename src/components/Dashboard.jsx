@@ -4,6 +4,7 @@ import clock from '../assets/icons/clock.svg';
 import map from '../assets/icons/map.svg';
 
 const Dashboard = ({ activities }) => {
+	const [isMobile, setIsMobile] = useState(window.innerWidth < 700);
 	let sevenDayTotal = 0 * 0.00062137;
 	let totalKudos = 0;
 
@@ -20,9 +21,28 @@ const Dashboard = ({ activities }) => {
 	let weeklyAverage = ((sevenDayTotal / 5) * 0.00062137).toFixed(2);
 	console.log(activities);
 
+	useEffect(() => {
+		window.addEventListener(
+			'resize',
+			() => {
+				const ismobile = window.innerWidth < 700;
+				if (ismobile !== isMobile) setIsMobile(ismobile);
+			},
+			false,
+		);
+	}, [isMobile]);
+
 	return (
-		<div className='d-flex container my-4'>
-			<Card className='col mx-2 bg-dark text-white'>
+		<div
+			className={
+				isMobile
+					? 'three-card-set d-flex container '
+					: 'three-card-set d-flex container my-4'
+			}>
+			<Card
+				className={
+					isMobile ? 'col bg-dark text-white mt-2' : 'col bg-dark text-white'
+				}>
 				<Card.Header>Total distance previous 7 days</Card.Header>
 				<Card.Body>
 					<Card.Title>
@@ -35,7 +55,10 @@ const Dashboard = ({ activities }) => {
 				</Card.Body>
 			</Card>
 
-			<Card className='col mx-2 bg-dark text-white'>
+			<Card
+				className={
+					isMobile ? 'col bg-dark text-white mt-2' : 'col bg-dark text-white'
+				}>
 				<Card.Header>Average daily distance past 7 days</Card.Header>
 				<Card.Body>
 					<Card.Title>
@@ -48,7 +71,10 @@ const Dashboard = ({ activities }) => {
 				</Card.Body>
 			</Card>
 
-			<Card className='col mx-2 bg-dark text-white'>
+			<Card
+				className={
+					isMobile ? 'col bg-dark text-white mt-2' : 'col bg-dark text-white'
+				}>
 				<Card.Header>Total amount of kudos past 30 activities</Card.Header>
 				<Card.Body>
 					<Card.Title>
