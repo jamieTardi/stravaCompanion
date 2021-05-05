@@ -11,6 +11,7 @@ function App() {
 			<Dashboard activities={activities} />
 			<Map activities={activities} />
 			<Activities activities={activities} setActivities={setActivities} />
+			<p>test</p>
 		</div>
 	);
 }
