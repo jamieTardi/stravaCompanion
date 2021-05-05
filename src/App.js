@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Activities, Dashboard, TotalRunGraph, Map } from './components/index';
+import { Navbar } from './components/Navigation/index';
 import './styles/styles.css';
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
 	const [darkmode, setDarkmode] = useState(true);
 	return (
 		<div className='App container col'>
+			<Navbar />
 			<TotalRunGraph activities={activities} />
 			<Dashboard activities={activities} />
 			<Map activities={activities} />
