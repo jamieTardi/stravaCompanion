@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
-import { Activities, Dashboard, TotalRunGraph, Map } from './components/index';
+import {
+	Activities,
+	Dashboard,
+	TotalRunGraph,
+	Map,
+	PersonalBests,
+} from './components/index';
 import { Navbar } from './components/Navigation/index';
 import './styles/styles.css';
 
@@ -10,6 +16,7 @@ function App() {
 		<div className='App container col'>
 			<Navbar />
 			<TotalRunGraph activities={activities} />
+			<PersonalBests />
 			<Dashboard activities={activities} />
 			<Map activities={activities} />
 			<Activities activities={activities} setActivities={setActivities} />
