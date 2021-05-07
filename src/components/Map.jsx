@@ -36,7 +36,7 @@ const Map = ({ activities }) => {
 		});
 
 		return () => map.remove();
-	});
+	}, []);
 
 	return (
 		<>
