@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Card, Spinner } from 'react-bootstrap';
-import { Line, Bar } from 'react-chartjs-2';
+import { Line, Doughnut } from 'react-chartjs-2';
 
 const TotalRunGraph = ({ activities }) => {
 	// const [runDistance, setRunDistance] = useState([]);
@@ -69,7 +69,7 @@ const TotalRunGraph = ({ activities }) => {
 		<div className='container my-4'>
 			{activities ? (
 				<div className='d-flex graph-container'>
-					<Card className='col bg-dark text-white mr-2 card-margins'>
+					<Card className='col bg-dark text-white card-margins'>
 						<Card.Header>
 							<Line data={data} className='graph-height' />
 						</Card.Header>
@@ -77,7 +77,7 @@ const TotalRunGraph = ({ activities }) => {
 					</Card>
 					<Card className='col bg-dark text-white card-margins'>
 						<Card.Header>
-							<Bar data={dataComp} className='graph-height' />
+							<Doughnut data={dataComp} className='graph-height' />
 						</Card.Header>
 						<Card.Body>
 							Total distance last 7 runs compared to the distance the previous 7
