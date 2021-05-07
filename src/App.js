@@ -14,11 +14,13 @@ function App() {
 	const [darkmode, setDarkmode] = useState(true);
 	return (
 		<div className='App container col'>
-			<TotalRunGraph activities={activities} />
-			<PersonalBests />
-			<Dashboard activities={activities} />
-			<Map activities={activities} />
-			<Activities activities={activities} setActivities={setActivities} />
+			<>
+				<TotalRunGraph activities={activities} />
+				<PersonalBests />
+				<Dashboard activities={activities} />
+				<Map activities={activities} />
+				<Activities activities={activities} setActivities={setActivities} />
+			</>
 		</div>
 	);
 }
