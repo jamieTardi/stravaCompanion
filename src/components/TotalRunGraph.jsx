@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Card, Spinner } from 'react-bootstrap';
 import { Line, Doughnut } from 'react-chartjs-2';
+import loadingGif from '../assets/icons/loading.svg';
 
 const TotalRunGraph = ({ activities }) => {
 	// const [runDistance, setRunDistance] = useState([]);
@@ -86,7 +87,7 @@ const TotalRunGraph = ({ activities }) => {
 					</Card>
 				</div>
 			) : (
-				<Spinner animation='grow' variant='success' />
+				<img src={loadingGif} alt='loading' />
 			)}
 		</div>
 	);
