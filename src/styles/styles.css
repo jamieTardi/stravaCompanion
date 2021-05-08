@@ -47,6 +47,11 @@ p {
   max-height: 200px;
 }
 
+.svg-image {
+  width: 150px;
+  height: 150px;
+}
+
 @media (max-width: 650px) {
   .graph-container {
     -webkit-box-orient: vertical;
