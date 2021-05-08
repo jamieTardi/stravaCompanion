@@ -4,7 +4,7 @@ import trophy from '../assets/icons/trophy.svg';
 
 const PersonalBests = () => {
 	return (
-		<div className='container'>
+		<div className='container d-flex justify-content-around'>
 			<Card className='bg-dark text-white d-flex'>
 				<Card.Img variant='top' src={trophy} className='svg-image' />
 				<Card.Body>
@@ -29,6 +29,29 @@ const PersonalBests = () => {
 									<td>39:26</td>
 									<td>1:24:32</td>
 									<td>4:05:04</td>
+								</tr>
+							</tbody>
+						</Table>
+					</Card.Text>
+				</Card.Body>
+			</Card>
+
+			<Card className='bg-dark text-white d-flex'>
+				<Card.Img variant='top' src={trophy} className='svg-image' />
+				<Card.Body>
+					<Card.Title>Running Personal Bests</Card.Title>
+					<Card.Text>
+						<Table striped bordered hover variant='dark'>
+							<thead>
+								<tr>
+									<th>Highest known FTP</th>
+									<th>Highest known VO2 Max</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>406w @75kg</td>
+									<td>62</td>
 								</tr>
 							</tbody>
 						</Table>
