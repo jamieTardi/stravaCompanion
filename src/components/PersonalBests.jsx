@@ -46,12 +46,14 @@ const PersonalBests = () => {
 								<tr>
 									<th>Highest known FTP</th>
 									<th>Highest known VO2 Max</th>
+									<th>Longest Ride</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
 									<td>406w @75kg</td>
 									<td>62</td>
+									<td>136 miles</td>
 								</tr>
 							</tbody>
 						</Table>
