@@ -5,6 +5,7 @@ import {
 	TotalRunGraph,
 	Map,
 	PersonalBests,
+	Athlete,
 } from './components/index';
 
 import './styles/styles.css';
@@ -15,6 +16,7 @@ function App() {
 	return (
 		<div className='App container col'>
 			<>
+				<Athlete />
 				<TotalRunGraph activities={activities} />
 				<PersonalBests />
 				<Dashboard activities={activities} />

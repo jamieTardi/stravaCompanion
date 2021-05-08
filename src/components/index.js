@@ -4,3 +4,4 @@ export { default as Dashboard } from './Dashboard';
 export { default as TotalRunGraph } from './TotalRunGraph';
 export { default as Map } from './Map';
 export { default as PersonalBests } from './PersonalBests';
+export { default as Athlete } from './Athelete';
