@@ -67,9 +67,12 @@ p {
 	width: auto;
 }
 // media queries
-@media (max-width: 650px) {
+@media (max-width: 1000px) {
 	.graph-container {
 		flex-direction: column;
+	}
+	.table-data-title {
+		height: 50px;
 	}
 	.card-margins {
 		margin: 0.5rem 0px 0px 0px !important;

@@ -25,7 +25,7 @@ const Dashboard = ({ activities, isMobile, setIsMobile }) => {
 		window.addEventListener(
 			'resize',
 			() => {
-				const ismobile = window.innerWidth < 700;
+				const ismobile = window.innerWidth < 1000;
 				if (ismobile !== isMobile) setIsMobile(ismobile);
 			},
 			false,

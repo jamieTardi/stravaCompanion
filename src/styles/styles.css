@@ -64,12 +64,15 @@ p {
   width: auto;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 1000px) {
   .graph-container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+  .table-data-title {
+    height: 50px;
   }
   .card-margins {
     margin: 0.5rem 0px 0px 0px !important;
