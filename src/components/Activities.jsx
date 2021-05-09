@@ -5,6 +5,7 @@ import loadingGif from '../assets/icons/loading.svg';
 const Activities = ({ activities, setActivities }) => {
 	const [activitiesPerPage, setActivitiesPerPage] = useState(5);
 	const [currentPage, setCurrentPage] = useState(1);
+	
 
 	console.log(activities);
 

@@ -11,7 +11,7 @@ const Athelete = () => {
 	const callRefresh = `https://www.strava.com/oauth/token?client_id=${clientID}&client_secret=${clientSecret}&refresh_token=${refreshToken}&grant_type=refresh_token`;
 
 	// endpoint for read-all activities. temporary token is added in getActivities()
-	const callActivities = `https://www.strava.com/api/v3/athlete`;
+	const callActivities = `https://www.strava.com/api/v3/athlete?access_token=`;
 
 	// Use refresh token to get current access token
 	useEffect(() => {
@@ -19,11 +19,11 @@ const Athelete = () => {
 			method: 'POST',
 		})
 			.then((res) => res.json())
-			.then((result) => getAtheleteDetails(result.access_token));
+			.then((result) => getActivities(result.access_token));
 	}, [callRefresh]);
 
 	// use current access token to call all activities
-	function getAtheleteDetails(access) {
+	function getActivities(access) {
 		fetch(callActivities + access)
 			.then((res) => res.json())
 			.then((data) => setAthelteInfo(data))
