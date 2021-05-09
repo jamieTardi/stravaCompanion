@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { Card, Button } from 'react-bootstrap';
+import loading from '../assets/icons/loading.svg';
 
 const Athelete = () => {
 	const [atheleteInfo, setAthelteInfo] = useState(null);
@@ -12,6 +14,25 @@ const Athelete = () => {
 
 	// endpoint for read-all activities. temporary token is added in getActivities()
 	const callActivities = `https://www.strava.com/api/v3/athlete?access_token=`;
+
+	let creationDate = atheleteInfo ? atheleteInfo.created_at.split('T')[0] : '';
+
+	// Create a correctly formatted date.
+	let toArray = creationDate.split('');
+
+	let year = '';
+	let month = '';
+	let day = '';
+
+	for (let i = 0; i < toArray.length; i++) {
+		if (toArray[i] !== '-' && i <= 4) {
+			year += toArray[i];
+		} else if (i > 4 && toArray[i] !== '-' && i <= 7) {
+			month += toArray[i];
+		} else if (toArray[i] !== '-') {
+			day += toArray[i];
+		}
+	}
 
 	// Use refresh token to get current access token
 	useEffect(() => {
@@ -29,8 +50,48 @@ const Athelete = () => {
 			.then((data) => setAthelteInfo(data))
 			.catch((e) => console.log(e));
 	}
+
 	console.log(atheleteInfo);
-	return <div></div>;
+
+	return (
+		<div className='container d-flex justify-content-center'>
+			{atheleteInfo ? (
+				<Card className='bg-dark text-white w-50'>
+					<div className='d-flex pt-4 justify-content-start pl-3'>
+						<p>Current Profile picture</p>
+						<Card.Img
+							variant='top'
+							src={atheleteInfo.profile}
+							className='athelete-profile-pic'
+						/>
+					</div>
+					<Card.Body>
+						<Card.Title>Athlete Details</Card.Title>
+						<Card.Text>
+							<span className='font-weight-bolder'>Name: </span>{' '}
+							{atheleteInfo.firstname} {atheleteInfo.lastname}
+						</Card.Text>
+
+						<Card.Text>
+							<span className='font-weight-bolder'>Athelte Bio: </span>{' '}
+							{atheleteInfo.bio}
+						</Card.Text>
+						<Card.Text>
+							<span className='font-weight-bolder'>Athelte Location: </span>{' '}
+							{atheleteInfo.city}, {atheleteInfo.country}
+						</Card.Text>
+						<Card.Text>
+							<span className='font-weight-bolder'>Joined Strava: </span> {day}/
+							{month}/{year}
+						</Card.Text>
+						<Button variant='primary'>Go somewhere</Button>
+					</Card.Body>
+				</Card>
+			) : (
+				<img src={loading} alt='loading card' />
+			)}
+		</div>
+	);
 };
 
 export default Athelete;

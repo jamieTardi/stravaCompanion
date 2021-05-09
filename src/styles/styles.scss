@@ -56,6 +56,11 @@ p {
 	height: 150px;
 }
 
+.athelete-profile-pic {
+	width: 120px !important;
+	height: 120px;
+	clip-path: circle(50% at 50% 50%);
+}
 // media queries
 @media (max-width: 650px) {
 	.graph-container {
