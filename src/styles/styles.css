@@ -59,6 +59,11 @@ p {
           clip-path: circle(50% at 50% 50%);
 }
 
+.strava-icon-button {
+  height: 20px;
+  width: auto;
+}
+
 @media (max-width: 650px) {
   .graph-container {
     -webkit-box-orient: vertical;

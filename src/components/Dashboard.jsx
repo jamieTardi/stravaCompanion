@@ -4,8 +4,7 @@ import clock from '../assets/icons/clock.svg';
 import map from '../assets/icons/map.svg';
 import loadingGif from '../assets/icons/loading.svg';
 
-const Dashboard = ({ activities }) => {
-	const [isMobile, setIsMobile] = useState(window.innerWidth < 700);
+const Dashboard = ({ activities, isMobile, setIsMobile }) => {
 	let sevenDayTotal = 0 * 0.00062137;
 	let totalKudos = 0;
 

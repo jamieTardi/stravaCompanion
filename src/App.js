@@ -12,14 +12,19 @@ import './styles/styles.css';
 
 function App() {
 	const [activities, setActivities] = useState(null);
+	const [isMobile, setIsMobile] = useState(window.innerWidth < 900);
 	const [darkmode, setDarkmode] = useState(true);
 	return (
 		<div className='App container col'>
 			<>
-				<Athlete />
+				<Athlete isMobile={isMobile} setIsMobile={setIsMobile} />
 				<TotalRunGraph activities={activities} />
 				<PersonalBests />
-				<Dashboard activities={activities} />
+				<Dashboard
+					activities={activities}
+					isMobile={isMobile}
+					setIsMobile={setIsMobile}
+				/>
 				<Map activities={activities} />
 				<Activities activities={activities} setActivities={setActivities} />
 			</>

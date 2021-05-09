@@ -61,6 +61,11 @@ p {
 	height: 120px;
 	clip-path: circle(50% at 50% 50%);
 }
+
+.strava-icon-button {
+	height: 20px;
+	width: auto;
+}
 // media queries
 @media (max-width: 650px) {
 	.graph-container {

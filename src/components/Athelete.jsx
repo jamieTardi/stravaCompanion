@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Card, Button } from 'react-bootstrap';
 import loading from '../assets/icons/loading.svg';
+import stravaIcon from '../assets/icons/favicon.ico';
 
-const Athelete = () => {
+const Athelete = ({ isMobile, setIsMobile }) => {
 	const [atheleteInfo, setAthelteInfo] = useState(null);
 	//Strava Credentials
 	let clientID = process.env.REACT_APP_CLIENT_ID;
@@ -54,9 +55,17 @@ const Athelete = () => {
 	console.log(atheleteInfo);
 
 	return (
-		<div className='container d-flex justify-content-center'>
+		<div
+			className={
+				isMobile
+					? 'container d-flex justify-content-center w-100'
+					: 'container d-flex justify-content-center'
+			}>
 			{atheleteInfo ? (
-				<Card className='bg-dark text-white w-50'>
+				<Card
+					className={
+						isMobile ? 'bg-dark text-white w-100' : 'bg-dark text-white w-50'
+					}>
 					<div className='d-flex pt-4 justify-content-start pl-3'>
 						<p>Current Profile picture</p>
 						<Card.Img
@@ -71,6 +80,10 @@ const Athelete = () => {
 							<span className='font-weight-bolder'>Name: </span>{' '}
 							{atheleteInfo.firstname} {atheleteInfo.lastname}
 						</Card.Text>
+						<Card.Text>
+							<span className='font-weight-bolder'>Sex: </span>{' '}
+							{atheleteInfo.sex === 'M' ? 'Male' : 'Female'}
+						</Card.Text>
 
 						<Card.Text>
 							<span className='font-weight-bolder'>Athelte Bio: </span>{' '}
@@ -84,7 +97,21 @@ const Athelete = () => {
 							<span className='font-weight-bolder'>Joined Strava: </span> {day}/
 							{month}/{year}
 						</Card.Text>
-						<Button variant='primary'>Go somewhere</Button>
+						<Card.Text>
+							<span className='font-weight-bolder'>Strava ID: </span>{' '}
+							{atheleteInfo.id}
+						</Card.Text>
+
+						<Button
+							href={`https://www.strava.com/athletes/${atheleteInfo.id}`}
+							style={{ background: '#FC5200', border: 'none' }}>
+							Link to Strava Account{' '}
+							<img
+								src={stravaIcon}
+								alt='strava'
+								className='strava-icon-button'
+							/>
+						</Button>
 					</Card.Body>
 				</Card>
 			) : (
