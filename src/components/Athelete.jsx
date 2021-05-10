@@ -3,8 +3,7 @@ import { Card, Button } from 'react-bootstrap';
 import loading from '../assets/icons/loading.svg';
 import stravaIcon from '../assets/icons/favicon.ico';
 
-const Athelete = ({ isMobile, setIsMobile }) => {
-	const [atheleteInfo, setAthelteInfo] = useState(null);
+const Athelete = ({ isMobile, setIsMobile, atheleteInfo, setAthelteInfo }) => {
 	//Strava Credentials
 	let clientID = process.env.REACT_APP_CLIENT_ID;
 	let clientSecret = process.env.REACT_APP_SECRET;

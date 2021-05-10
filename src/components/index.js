@@ -5,3 +5,4 @@ export { default as TotalRunGraph } from './TotalRunGraph';
 export { default as Map } from './Map';
 export { default as PersonalBests } from './PersonalBests';
 export { default as Athlete } from './Athelete';
+export { default as Nav } from './Nav';

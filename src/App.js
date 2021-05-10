@@ -6,18 +6,26 @@ import {
 	Map,
 	PersonalBests,
 	Athlete,
+	Nav,
 } from './components/index';
-
+import { AnimateSharedLayout, motion } from 'framer-motion';
 import './styles/styles.css';
 
 function App() {
 	const [activities, setActivities] = useState(null);
 	const [isMobile, setIsMobile] = useState(window.innerWidth < 1000);
 	const [darkmode, setDarkmode] = useState(true);
+	const [atheleteInfo, setAthelteInfo] = useState(null);
 	return (
 		<div className='App container col'>
 			<>
-				<Athlete isMobile={isMobile} />
+				<Nav atheleteInfo={atheleteInfo} />
+				<Athlete
+					isMobile={isMobile}
+					atheleteInfo={atheleteInfo}
+					setAthelteInfo={setAthelteInfo}
+				/>
+
 				<TotalRunGraph activities={activities} />
 				<PersonalBests isMobile={isMobile} />
 				<Dashboard
