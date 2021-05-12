@@ -41,14 +41,24 @@ function Item({ atheleteInfo, i }) {
 							className='profile-image'
 						/>
 					) : i === 1 ? (
-						<img src={chartIcon} alt='charts' className='profile-image' />
+						<div className='profile-nav-container'>
+							<img src={chartIcon} alt='charts' className='profile-image' />
+							<p className='profile-text text-dark'>Profile</p>
+						</div>
 					) : i === 2 ? (
-						<img src={trophy} alt='trophy' className='profile-image' />
+						<div className='profile-nav-container'>
+							<img src={trophy} alt='trophy' className='profile-image' />
+							<p className='profile-text text-dark'>Personal Bests</p>
+						</div>
 					) : (
 						''
 					)}
 				</motion.div>
-				<AnimatePresence>{isOpen && <Content />}</AnimatePresence>
+				<AnimatePresence>
+					{(i === 0 && isOpen && <Content />) ||
+						(i === 1 && isOpen && <NavCharts />) ||
+						(i === 2 && isOpen && <NavTrophy />)}
+				</AnimatePresence>
 			</motion.li>
 		</>
 	);
@@ -76,7 +86,7 @@ function NavTrophy() {
 			animate={{ opacity: 1 }}
 			exit={{ opacity: 0 }}>
 			<div className='row pt-4 pl-3'>
-				<p className='text-dark'>Atheletes Profile</p>
+				<p className='text-dark'>Trophy</p>
 			</div>
 		</motion.div>
 	);
@@ -90,7 +100,7 @@ function NavCharts() {
 			animate={{ opacity: 1 }}
 			exit={{ opacity: 0 }}>
 			<div className='row pt-4 pl-3'>
-				<p className='text-dark'>Atheletes Profile</p>
+				<p className='text-dark'>Charts</p>
 			</div>
 		</motion.div>
 	);

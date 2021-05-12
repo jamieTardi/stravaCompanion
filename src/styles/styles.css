@@ -66,11 +66,21 @@ li:last-child {
   border-radius: 20px;
 }
 
+.profile-nav-container {
+  position: relative;
+}
+
 .profile-image {
   -webkit-clip-path: circle(50% at 50% 50%);
           clip-path: circle(50% at 50% 50%);
   width: 40px;
   height: 40px;
+}
+
+.profile-text {
+  position: absolute;
+  top: 20%;
+  right: -200%;
 }
 
 html {
