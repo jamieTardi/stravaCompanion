@@ -7,6 +7,7 @@ import {
 	PersonalBests,
 	Athlete,
 	Nav,
+	ButtonsGraph,
 } from './components/index';
 import { AnimateSharedLayout, motion } from 'framer-motion';
 import './styles/styles.css';
@@ -16,6 +17,10 @@ function App() {
 	const [isMobile, setIsMobile] = useState(window.innerWidth < 1000);
 	const [darkmode, setDarkmode] = useState(true);
 	const [atheleteInfo, setAthelteInfo] = useState(null);
+	const [isRunning, setIsRunning] = useState(true);
+	const [isCycling, setIsCycling] = useState(false);
+	const [isSwimming, setIsSwimming] = useState(false);
+
 	return (
 		<div className='App container col'>
 			<>
@@ -34,6 +39,12 @@ function App() {
 					setIsMobile={setIsMobile}
 				/>
 				<Map activities={activities} />
+				<ButtonsGraph
+					activities={activities}
+					setIsCycling={setIsCycling}
+					setIsRunning={setIsRunning}
+					setIsSwimming={setIsSwimming}
+				/>
 				<Activities activities={activities} setActivities={setActivities} />
 			</>
 		</div>
