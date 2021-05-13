@@ -2,6 +2,7 @@ import React from 'react';
 import { ButtonGroup, Button } from 'react-bootstrap';
 
 const ButtonsGraph = ({ setIsCycling, setIsRunning, setIsSwimming }) => {
+	// turn this into filters
 	const handleIsRunning = () => {
 		setIsRunning(true);
 		setIsCycling(false);
