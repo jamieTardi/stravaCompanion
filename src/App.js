@@ -20,6 +20,9 @@ function App() {
 	const [isRunning, setIsRunning] = useState(true);
 	const [isCycling, setIsCycling] = useState(false);
 	const [isSwimming, setIsSwimming] = useState(false);
+	const [runningActivities, setRunningActivities] = useState(null);
+	const [cyclingActivities, setCyclingActivites] = useState(null);
+	const [walkingActivities, setWalkingActivities] = useState(null);
 
 	return (
 		<div className='App container col'>
@@ -45,7 +48,16 @@ function App() {
 					setIsRunning={setIsRunning}
 					setIsSwimming={setIsSwimming}
 				/>
-				<Activities activities={activities} setActivities={setActivities} />
+				<Activities
+					activities={activities}
+					setActivities={setActivities}
+					runningActivities={runningActivities}
+					setRunningActivities={setRunningActivities}
+					cyclingActivities={cyclingActivities}
+					setCyclingActivites={setCyclingActivites}
+					walkingActivities={walkingActivities}
+					setWalkingActivities={setWalkingActivities}
+				/>
 			</>
 		</div>
 	);

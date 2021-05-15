@@ -7,3 +7,4 @@ export { default as PersonalBests } from './PersonalBests';
 export { default as Athlete } from './Athelete';
 export { default as Nav } from './Nav';
 export { default as ButtonsGraph } from './ButtonsGraph';
+export { default as Filter } from './Filter';
