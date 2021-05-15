@@ -8,6 +8,7 @@ import {
 	Athlete,
 	Nav,
 	ButtonsGraph,
+	ItemTag,
 } from './components/index';
 import { AnimateSharedLayout, motion } from 'framer-motion';
 import './styles/styles.css';
@@ -42,12 +43,15 @@ function App() {
 					setIsMobile={setIsMobile}
 				/>
 				<Map activities={activities} />
-				<ButtonsGraph
-					activities={activities}
-					setIsCycling={setIsCycling}
-					setIsRunning={setIsRunning}
-					setIsSwimming={setIsSwimming}
-				/>
+				<div>
+					<ButtonsGraph
+						activities={activities}
+						setIsCycling={setIsCycling}
+						setIsRunning={setIsRunning}
+						setIsSwimming={setIsSwimming}
+					/>
+					<ItemTag />
+				</div>
 				<Activities
 					activities={activities}
 					setActivities={setActivities}

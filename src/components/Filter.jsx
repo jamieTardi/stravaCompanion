@@ -18,7 +18,7 @@ const Filter = ({
 				runArr.push(run);
 			}
 		});
-		setRunningActivities([runArr]);
+		setRunningActivities(runArr);
 	};
 
 	const handleCycling = () => {

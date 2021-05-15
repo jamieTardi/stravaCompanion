@@ -66,6 +66,22 @@ p {
 	height: 20px;
 	width: auto;
 }
+
+//filter box
+.item-tag-container {
+	border: 2px solid #ff69b4;
+	border-radius: 25px;
+	padding: 15px 25px;
+	background-color: transparent;
+	max-width: 200px;
+
+	.line {
+		width: 20px;
+		height: 2px;
+		border: 2px solid #ff69b4;
+	}
+}
+
 // media queries
 @media (max-width: 1000px) {
 	.graph-container {
