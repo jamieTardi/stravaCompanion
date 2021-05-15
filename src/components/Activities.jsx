@@ -14,6 +14,7 @@ const Activities = ({
 }) => {
 	const [activitiesPerPage, setActivitiesPerPage] = useState(5);
 	const [currentPage, setCurrentPage] = useState(1);
+	const [combineActivities, setCombineActivities] = useState([]);
 
 	console.log(activities);
 
@@ -68,6 +69,8 @@ const Activities = ({
 						setCyclingActivites={setCyclingActivites}
 						walkingActivities={walkingActivities}
 						setWalkingActivities={setWalkingActivities}
+						combineActivities={combineActivities}
+						setCombineActivities={setCombineActivities}
 					/>
 					<Table striped bordered hover variant='dark'>
 						<thead>
