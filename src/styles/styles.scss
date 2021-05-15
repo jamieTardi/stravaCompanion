@@ -71,9 +71,25 @@ p {
 .item-tag-container {
 	border: 2px solid #ff69b4;
 	border-radius: 25px;
-	padding: 15px 25px;
+	padding: 10px 7px;
 	background-color: transparent;
-	max-width: 200px;
+	max-width: 150px;
+
+	p {
+		color: #ff69b4;
+
+		font-size: 18px;
+		margin-bottom: 0;
+	}
+
+	img {
+		padding-top: 2px;
+		cursor: pointer;
+	}
+	img:hover {
+		rotate: 180deg;
+		transition: ease 0.75s;
+	}
 
 	.line {
 		width: 20px;
