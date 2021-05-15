@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { ItemTag } from './index';
 
 const Filter = ({
 	activities,
@@ -11,6 +12,10 @@ const Filter = ({
 	combineActivities,
 	setCombineActivities,
 }) => {
+	const [runningItemFilter, setRunningItemFilter] = useState(false);
+	const [cyclingItemFilter, setCyclingItemFilter] = useState(false);
+	const [walkingItemFilter, setWalkingItemFilter] = useState(false);
+
 	const handleRunning = () => {
 		let runArr = [];
 		activities.forEach((run) => {
@@ -19,6 +24,7 @@ const Filter = ({
 			}
 		});
 		setRunningActivities(runArr);
+		setRunningItemFilter((prev) => !prev);
 	};
 
 	const handleCycling = () => {
@@ -46,6 +52,16 @@ const Filter = ({
 			<button onClick={handleRunning}>Run</button>
 			<button onClick={handleCycling}>Cycle</button>
 			<button onClick={handleWalking}>Walk</button>
+			<div>
+				{runningItemFilter ? (
+					<ItemTag
+						runningItemFilter={runningItemFilter}
+						setRunningItemFilter={setRunningItemFilter}
+					/>
+				) : (
+					''
+				)}
+			</div>
 		</div>
 	);
 };

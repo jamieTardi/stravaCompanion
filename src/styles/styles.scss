@@ -77,17 +77,16 @@ p {
 
 	p {
 		color: #ff69b4;
-
 		font-size: 18px;
 		margin-bottom: 0;
 	}
 
 	img {
-		padding-top: 2px;
 		cursor: pointer;
+		padding-top: 2px;
 	}
 	img:hover {
-		rotate: 180deg;
+		scale: 1.1;
 		transition: ease 0.75s;
 	}
 
