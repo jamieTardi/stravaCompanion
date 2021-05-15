@@ -20,7 +20,7 @@ function App() {
 	const [isRunning, setIsRunning] = useState(true);
 	const [isCycling, setIsCycling] = useState(false);
 	const [isSwimming, setIsSwimming] = useState(false);
-	const [runningActivities, setRunningActivities] = useState(null);
+	const [runningActivities, setRunningActivities] = useState([]);
 	const [cyclingActivities, setCyclingActivites] = useState(null);
 	const [walkingActivities, setWalkingActivities] = useState(null);
 

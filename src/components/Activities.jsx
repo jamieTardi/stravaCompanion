@@ -2,7 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { Table } from 'react-bootstrap';
 import { PaginationActivity, Filter } from './index';
 import loadingGif from '../assets/icons/loading.svg';
-const Activities = ({ activities, setActivities }) => {
+const Activities = ({
+	activities,
+	setActivities,
+	runningActivities,
+	setRunningActivities,
+	cyclingActivities,
+	setCyclingActivites,
+	walkingActivities,
+	setWalkingActivities,
+}) => {
 	const [activitiesPerPage, setActivitiesPerPage] = useState(5);
 	const [currentPage, setCurrentPage] = useState(1);
 
@@ -51,7 +60,15 @@ const Activities = ({ activities, setActivities }) => {
 		<div className='d-flex justify-content-center flex-column align-items-center table-container container'>
 			{activities ? (
 				<>
-					<Filter activities={activities} />
+					<Filter
+						activities={activities}
+						runningActivities={runningActivities}
+						setRunningActivities={setRunningActivities}
+						cyclingActivities={cyclingActivities}
+						setCyclingActivites={setCyclingActivites}
+						walkingActivities={walkingActivities}
+						setWalkingActivities={setWalkingActivities}
+					/>
 					<Table striped bordered hover variant='dark'>
 						<thead>
 							<tr>
