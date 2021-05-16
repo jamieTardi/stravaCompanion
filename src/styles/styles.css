@@ -149,6 +149,10 @@ p {
   width: auto;
 }
 
+.filter-container {
+  width: 100% !important;
+}
+
 .item-tag-container {
   border: 2px solid #ff69b4;
   border-radius: 25px;

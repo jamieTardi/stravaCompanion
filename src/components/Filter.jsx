@@ -15,6 +15,7 @@ const Filter = ({
 	const [runningItemFilter, setRunningItemFilter] = useState(false);
 	const [cyclingItemFilter, setCyclingItemFilter] = useState(false);
 	const [walkingItemFilter, setWalkingItemFilter] = useState(false);
+	const [activeFilter, setActiveFilter] = useState(false);
 
 	const handleRunning = () => {
 		let runArr = [];
@@ -25,6 +26,7 @@ const Filter = ({
 		});
 		setRunningActivities(runArr);
 		setRunningItemFilter((prev) => !prev);
+		setActiveFilter(true);
 	};
 
 	const handleCycling = () => {
@@ -35,6 +37,8 @@ const Filter = ({
 			}
 		});
 		setCyclingActivites(cycleArr);
+		setCyclingItemFilter((prev) => !prev);
+		setActiveFilter(true);
 	};
 
 	const handleWalking = () => {
@@ -45,18 +49,37 @@ const Filter = ({
 			}
 		});
 		setWalkingActivities(walkArr);
+		setWalkingItemFilter((prev) => !prev);
+		setActiveFilter(true);
 	};
 
 	return (
-		<div>
+		<div className='w-100'>
 			<button onClick={handleRunning}>Run</button>
 			<button onClick={handleCycling}>Cycle</button>
 			<button onClick={handleWalking}>Walk</button>
-			<div>
+			<div className='filter-container d-flex justify-content-around'>
 				{runningItemFilter ? (
 					<ItemTag
 						runningItemFilter={runningItemFilter}
 						setRunningItemFilter={setRunningItemFilter}
+						activeFilter={activeFilter}
+					/>
+				) : (
+					''
+				)}
+
+				{cyclingItemFilter ? (
+					<ItemTag
+						cyclingItemFilter={cyclingItemFilter}
+						setCyclingItemFilter={setCyclingItemFilter}
+						activeFilter={activeFilter}
+					/>
+				) : walkingItemFilter ? (
+					<ItemTag
+						walkingItemFilter={walkingItemFilter}
+						setWalkingItemFilter={setWalkingItemFilter}
+						activeFilter={activeFilter}
 					/>
 				) : (
 					''
