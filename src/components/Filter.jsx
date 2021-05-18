@@ -52,13 +52,14 @@ const Filter = ({
 		setWalkingItemFilter((prev) => !prev);
 		setActiveFilter(true);
 	};
+	console.log(walkingItemFilter);
 
 	return (
 		<div className='w-100'>
 			<button onClick={handleRunning}>Run</button>
 			<button onClick={handleCycling}>Cycle</button>
 			<button onClick={handleWalking}>Walk</button>
-			<div className='filter-container d-flex justify-content-around'>
+			<div className='filter-container d-flex justify-content-around my-3'>
 				{runningItemFilter ? (
 					<ItemTag
 						runningItemFilter={runningItemFilter}
@@ -75,7 +76,10 @@ const Filter = ({
 						setCyclingItemFilter={setCyclingItemFilter}
 						activeFilter={activeFilter}
 					/>
-				) : walkingItemFilter ? (
+				) : (
+					''
+				)}
+				{walkingItemFilter ? (
 					<ItemTag
 						walkingItemFilter={walkingItemFilter}
 						setWalkingItemFilter={setWalkingItemFilter}

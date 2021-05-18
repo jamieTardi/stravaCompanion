@@ -12,10 +12,10 @@ const Map = ({ activities }) => {
 	const [zoom, setZoom] = useState(14);
 	const [start, setStart] = useState(null);
 
-	let recentRun = activities
-		? polyline.decode(activities[0].map.summary_polyline)
-		: '';
-	console.log(recentRun);
+	// let recentRun = activities
+	// 	? polyline.decode(activities[0].map.summary_polyline)
+	// 	: '';
+	// console.log(recentRun);
 
 	mapboxgl.workerClass = MapboxWorker;
 	mapboxgl.accessToken =
