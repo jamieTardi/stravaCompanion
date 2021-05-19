@@ -9,6 +9,7 @@ import {
 	Nav,
 	ButtonsGraph,
 	ItemTag,
+	RunningTable,
 } from './components/index';
 import { AnimateSharedLayout, motion } from 'framer-motion';
 import './styles/styles.css';
@@ -62,6 +63,9 @@ function App() {
 					walkingActivities={walkingActivities}
 					setWalkingActivities={setWalkingActivities}
 				/>
+				<div>
+					<RunningTable />
+				</div>
 			</>
 		</div>
 	);

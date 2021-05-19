@@ -9,3 +9,4 @@ export { default as Nav } from './Nav';
 export { default as ButtonsGraph } from './ButtonsGraph';
 export { default as Filter } from './Filter';
 export { default as ItemTag } from './ItemTag';
+export { default as RunningTable } from './RunningTable';
