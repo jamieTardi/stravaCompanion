@@ -1,6 +1,13 @@
 import React from 'react';
 
-const RunningTable = ({ runningFilter }) => {
+const RunningTable = ({ runningFilter, setRunningFilter, activities }) => {
+	const handleRunningFilter = () => {
+		activities.forEach((run) => {
+			if (run.type === 'Run') {
+				setRunningFilter(run);
+			}
+		});
+	};
 	return <div></div>;
 };
 

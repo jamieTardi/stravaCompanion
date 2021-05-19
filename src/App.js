@@ -25,6 +25,7 @@ function App() {
 	const [runningActivities, setRunningActivities] = useState([]);
 	const [cyclingActivities, setCyclingActivites] = useState(null);
 	const [walkingActivities, setWalkingActivities] = useState(null);
+	const [filterRunning, setFilterRunning] = useState(null);
 
 	return (
 		<div className='App container col'>
@@ -64,7 +65,11 @@ function App() {
 					setWalkingActivities={setWalkingActivities}
 				/>
 				<div>
-					<RunningTable />
+					<RunningTable
+						filterRunning={filterRunning}
+						setFilterRunning={setFilterRunning}
+						activities={activities}
+					/>
 				</div>
 			</>
 		</div>
