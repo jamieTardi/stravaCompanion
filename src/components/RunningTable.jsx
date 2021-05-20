@@ -1,13 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-const RunningTable = ({ runningFilter, setRunningFilter, activities }) => {
+const RunningTable = ({ filterRunning, setFilterRunning, activities }) => {
 	const handleRunningFilter = () => {
 		activities.forEach((run) => {
 			if (run.type === 'Run') {
-				setRunningFilter(run);
+				setFilterRunning(run);
 			}
 		});
 	};
+	console.log(filterRunning);
+	useEffect(() => {
+		try {
+			handleRunningFilter();
+		} catch (e) {
+			console.log(e);
+		}
+	}, [activities]);
 	return <div></div>;
 };
 
