@@ -15,7 +15,7 @@ const Activities = ({
 	const [activitiesPerPage, setActivitiesPerPage] = useState(5);
 	const [currentPage, setCurrentPage] = useState(1);
 	const [combineActivities, setCombineActivities] = useState([]);
-	const [filterRunning, setFilterRunning] = useState(null);
+	
 
 	console.log(activities);
 

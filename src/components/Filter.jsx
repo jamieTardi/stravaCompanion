@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ItemTag } from './index';
+import { ButtonGroup, Button } from 'react-bootstrap';
 
 const Filter = ({
 	activities,
@@ -56,38 +57,42 @@ const Filter = ({
 
 	return (
 		<div className='w-100'>
-			<button onClick={handleRunning}>Run</button>
-			<button onClick={handleCycling}>Cycle</button>
-			<button onClick={handleWalking}>Walk</button>
-			<div className='filter-container d-flex justify-content-around my-3'>
-				{runningItemFilter ? (
-					<ItemTag
-						runningItemFilter={runningItemFilter}
-						setRunningItemFilter={setRunningItemFilter}
-						activeFilter={activeFilter}
-					/>
-				) : (
-					''
-				)}
+			<ButtonGroup aria-label='Basic example' className='my-3'>
+				<Button onClick={handleRunning}>Running 🏃‍♂️</Button>
+				<Button onClick={handleCycling}>Cycling 🚴</Button>
+				<Button onClick={handleWalking}>Walking 🚶</Button>
+			</ButtonGroup>
+			<div className='filter-box'>
+				<div className='filter-container d-flex justify-content-around my-3'>
+					{runningItemFilter ? (
+						<ItemTag
+							runningItemFilter={runningItemFilter}
+							setRunningItemFilter={setRunningItemFilter}
+							activeFilter={activeFilter}
+						/>
+					) : (
+						''
+					)}
 
-				{cyclingItemFilter ? (
-					<ItemTag
-						cyclingItemFilter={cyclingItemFilter}
-						setCyclingItemFilter={setCyclingItemFilter}
-						activeFilter={activeFilter}
-					/>
-				) : (
-					''
-				)}
-				{walkingItemFilter ? (
-					<ItemTag
-						walkingItemFilter={walkingItemFilter}
-						setWalkingItemFilter={setWalkingItemFilter}
-						activeFilter={activeFilter}
-					/>
-				) : (
-					''
-				)}
+					{cyclingItemFilter ? (
+						<ItemTag
+							cyclingItemFilter={cyclingItemFilter}
+							setCyclingItemFilter={setCyclingItemFilter}
+							activeFilter={activeFilter}
+						/>
+					) : (
+						''
+					)}
+					{walkingItemFilter ? (
+						<ItemTag
+							walkingItemFilter={walkingItemFilter}
+							setWalkingItemFilter={setWalkingItemFilter}
+							activeFilter={activeFilter}
+						/>
+					) : (
+						''
+					)}
+				</div>
 			</div>
 		</div>
 	);
